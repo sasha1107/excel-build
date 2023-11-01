@@ -1,0 +1,24 @@
+{
+  "name": "excel-build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Soohyun Jung",
+    "email": "sasha1107@naver.com",
+    "url": "https://github.com/sasha1107"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "xlsx-js-style": "^1.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
