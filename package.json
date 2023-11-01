@@ -1,18 +1,34 @@
 {
   "name": "excel-build",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "excel-build is a library for creating excel files in the browser",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "excel",
+    "xls",
+    "xlsx",
+    "xlsb",
+    "xlsm",
+    "office",
+    "spreadsheet",
+    "js-xlsx",
+    "xlsx-js",
+    "sheetjs-style",
+    "sheetjs-style-v2"
+  ],
   "author": {
     "name": "Soohyun Jung",
     "email": "sasha1107@naver.com",
     "url": "https://github.com/sasha1107"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sasha1107/excel-build"
   },
   "license": "ISC",
   "dependencies": {
