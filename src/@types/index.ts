@@ -6,6 +6,26 @@ interface CellObjectType extends CellObject {
   s: CellStyleType;
 }
 
+type BorderStyleType =
+  | 'dashDotDot'
+  | 'dashDot'
+  | 'dashed'
+  | 'dotted'
+  | 'hair'
+  | 'mediumDashDotDot'
+  | 'mediumDashDot'
+  | 'mediumDashed'
+  | 'medium'
+  | 'slantDashDot'
+  | 'thick'
+  | 'thin';
+
+type ColorType = {
+  rgb?: string;
+  theme?: number;
+  tint?: number;
+};
+
 type CellStyleType = {
   alignment: {
     vertical?: 'center' | 'top' | 'bottom'; // 수직 정렬
@@ -42,26 +62,6 @@ type CellStyleType = {
     vertAlign?: 'subscript' | 'superscript';
   };
   numFmt?: string;
-};
-
-type BorderStyleType =
-  | 'dashDotDot'
-  | 'dashDot'
-  | 'dashed'
-  | 'dotted'
-  | 'hair'
-  | 'mediumDashDotDot'
-  | 'mediumDashDot'
-  | 'mediumDashed'
-  | 'medium'
-  | 'slantDashDot'
-  | 'thick'
-  | 'thin';
-
-type ColorType = {
-  rgb?: string;
-  theme?: number;
-  tint?: number;
 };
 
 export type { CellObjectType, CellStyleType, ColorType };
