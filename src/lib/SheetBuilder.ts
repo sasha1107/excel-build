@@ -48,7 +48,6 @@ export class SheetBuilder {
     XLSX.utils.sheet_add_aoa(this.worksheet, [...tbody], option);
     return this;
   }
-
   appendCustomRow(
     row: CellObjectType[],
     option: SheetAOAOpts = { origin: this.worksheet['A1'] ? -1 : 'A1' }
@@ -56,7 +55,7 @@ export class SheetBuilder {
     XLSX.utils.sheet_add_aoa(this.worksheet, [row], option);
     return this;
   }
-  mergeCell(start: number[], end: number[]) {
+  mergeCell(start: [number, number], end: [number, number]) {
     const EXCEL_COLUMN: string[] = Array(26)
       .fill(0)
       .map((_, index) => String.fromCharCode(index + 65))
@@ -65,10 +64,11 @@ export class SheetBuilder {
           .fill(0)
           .map((_, index) => 'A' + String.fromCharCode(index + 65))
       );
-
+    const [x0, y0] = start;
+    const [x1, y1] = end;
     this.worksheet['!merges'] = [
       XLSX.utils.decode_range(
-        `${EXCEL_COLUMN[start[0]]}${start[1]}:${EXCEL_COLUMN[end[0]]}${end[1]}`
+        `${EXCEL_COLUMN[x0]}${y0}:${EXCEL_COLUMN[x1]}${y1}`
       ),
     ];
     return this;
