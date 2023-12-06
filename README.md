@@ -1,6 +1,5 @@
 # excel-build
 
-
 # Installation
 
 ```sh
@@ -15,51 +14,124 @@ npm install excel-build
 import { FileBuilder } from 'excel-build';
 
 const excelFile = new FileBuilder('FILE_NAME');
+
+excelFile.addSheet(sheet1).addSheet(sheet2).download();
 ```
 
 ### API
 
-|Method|Description|Type|Parameter|
-|:-:|:-:|:-:|:-:|
-|`addSheet`|시트를 추가하는 메서드|`function`|`SheetBuilder`|
-|`download`|생성한 엑셀 파일을 다운로드 합니다.|`function`|-|
+|   Method   |             Description              |    Type    |   Parameter    |    Returns    |
+| :--------: | :----------------------------------: | :--------: | :------------: | :-----------: |
+| `addSheet` |    Add a sheet to the Excel file.    | `function` | `SheetBuilder` | `FileBuilder` |
+| `download` | Download the Excel file you created. | `function` |       -        |    `void`     |
 
 ## SheetBuilder
 
 ```jsx
 import { SheetBuilder } from 'excel-build';
 
+const data = [
+  ['1', 'soohyun', 'sasha1107@naver.com', '01012345678', 'FE'],
+  ['2', 'sasha', 'sasha981107@gmail.com', '01087654321', 'BE'],
+];
+
 const sheet1 = new SheetBuilder('sheet_1');
-const sheet2 = new SheetBuilder('sheet_2');
+const sheet2 = new SheetBuilder('sheet_2')
+  .appendThead(['id', 'name', 'email', 'phone', 'department'])
+  .addTBody(data)
+  .mergeCell([0, 3], [4, 3]);
 ```
 
 ### API
 
-|Method|Description|Type|Parameter|
-|:-:|:-:|:-:|:-:|
-|`appendThead`|dsfdsf|`function`|`(theadArr: string[], option: any)`|
-|`appendRow`|sdfdsfs|`function`|``|
-|`appendTbody`|sdfdsfs|`function`|``|
-
+|      Method       |                                       Description                                        |    Type    |                          Parameter                           |    Returns     |
+| :---------------: | :--------------------------------------------------------------------------------------: | :--------: | :----------------------------------------------------------: | :------------: |
+|   `appendThead`   |                             Adds a header row to the table.                              | `function` |             `(theadArr: string[], option: any)`              | `SheetBuilder` |
+|    `appendRow`    |                                 Adds a row to the table.                                 | `function` |  `(tRowArr: string\|number\|boolean\|Date[], option: any)`   | `SheetBuilder` |
+|   `appendTbody`   |                                         sdfdsfs                                          | `function` | `(tbodyArr: string\|number\|boolean\|Date[][], option: any)` | `SheetBuilder` |
+| `appendCustomRow` |                           Add custom style rows to the table.                            | `function` |    `(row: string\|number\|boolean\|Date[], option: any)`     | `SheetBuilder` |
+|    `mergeCell`    | Merge the cells with the starting cell [x0, y0] and the ending cell [x1, y1] as factors. | `function` |      `(start: [number, number], end: [number, number])`      | `SheetBuilder` |
+|  `getWorkSheet`   |                              Returns the sheet you created.                              | `function` |                             `-`                              | `SheetBuilder` |
+|  `getSheetName`   |                        Returns the name of the sheet you created.                        | `function` |                             `-`                              |    `string`    |
 
 ## CellBuilder
 
 ```jsx
-const excel = new FileBuilder('파일명.xlsx');
+const data = ['1', 'soohyun', 'sasha1107@naver.com', '01012345678', 'FE'];
 
-const sheet1 = new SheetBuilder('시트 1')
-  .appendThead(['인덱스', '이름', '이메일', '연락처', '부서'])
-  .appendCustomRow(
-    // 스타일 커스텀
-    data.map((item) =>
-      new CellBuilder(item).setFontSize(20).setFontItalic().build()
-    )
+sheet1.appendCustomRow(
+  data.map((item) =>
+    new CellBuilder(item)
+      .setFontSize(20)
+      .setFontColor('#FFFFFF')
+      .setBackgroundColor('#555555')
+      .setFontItalic()
+      .build()
   )
-  .mergeCell([0, 48], [10, 48]); // 셀 병합 [x0, y0], [x1, y1]
-
-const sheet2 = new SheetBuilder('시트 2')
-  .appendThead(['인덱스', '이름', '이메일', '연락처', '부서'])
-  .appendTbody(data.map((item) => item));
-
-excel.append(sheet1).append(sheet2).download(); // 원하는 만큼 시트 추가
+);
 ```
+
+### API
+
+|           Method           |                             Description                             |    Type    |           Parameter           |    Returns    |
+| :------------------------: | :-----------------------------------------------------------------: | :--------: | :---------------------------: | :-----------: |
+|   `setAlignMentVertical`   |                Sets the vertical alignment of cells.                | `function` | `center` \| `top` \| `bottom` | `CellBuilder` |
+|  `setAlignMentHorizontal`  |               Sets the horizontal alignment of cells.               | `function` | `center` \| `left` \| `right` | `CellBuilder` |
+|   `setAlignMentWrapText`   |                        Allow text wrapping.                         | `function` |              `-`              | `CellBuilder` |
+| `setAlignMentTextRotation` | 180 is rotated down 180 degrees, 255 is special, aligned vertically | `function` |      `0 to 180, or 255`       | `CellBuilder` |
+|        `setBorder`         |                  Sets the border style for cells.                   | `function` |  `null` \| `BorderStyleType`  | `CellBuilder` |
+|    `setBackgroundColor`    |               Sets the background color of the cell.                | `function` |         `string(HEX)`         | `CellBuilder` |
+|       `setFontColor`       |                     Set the color of the font.                      | `function` |         `string(HEX)`         | `CellBuilder` |
+|       `setFontSize`        |                         Set the font size.                          | `function` |           `number`            | `CellBuilder` |
+|       `setFontBold`        |                        Set the font in bold.                        | `function` |              `-`              | `CellBuilder` |
+|      `setFontItalic`       |                       Set the font to italic.                       | `function` |              `-`              | `CellBuilder` |
+|      `setFontStrike`       |                   Set strikethrough in the font.                    | `function` |              `-`              | `CellBuilder` |
+|     `setFontUnderline`     |                         Underline the font.                         | `function` |              `-`              | `CellBuilder` |
+|          `build`           |                               dsfdsf                                | `function` |              `-`              | `CellBuilder` |
+
+<details>
+  <summary><code>BorderStyleType</code></summary>
+
+```ts
+type BorderType =
+  | 'dashDotDot'
+  | 'dashDot'
+  | 'dashed'
+  | 'dotted'
+  | 'hair'
+  | 'mediumDashDotDot'
+  | 'mediumDashDot'
+  | 'mediumDashed'
+  | 'medium'
+  | 'slantDashDot'
+  | 'thick'
+  | 'thin';
+
+type BorderStyleType = {
+  top?: { style: BorderType; color: ColorType };
+  bottom?: { style: BorderType; color: ColorType };
+  left?: { style: BorderType; color: ColorType };
+  right?: { style: BorderType; color: ColorType };
+  diagonal?: {
+    style: BorderType;
+    color: ColorType;
+    diagonalUp: boolean;
+    diagonalDown: boolean;
+  };
+};
+```
+
+</details>
+
+<details>
+  <summary><code>ColorType</code></summary>
+
+```ts
+type ColorType = {
+  rgb?: string;
+  theme?: number;
+  tint?: number;
+};
+```
+
+</details>
