@@ -66,7 +66,7 @@ export class CellBuilder {
   setBackgroundColor(color: ColorType['rgb']) {
     this.style.fill = {
       patternType: 'solid',
-      fgColor: { rgb: color },
+      fgColor: { rgb: color?.replace('#', '') },
     };
     return this;
   }
@@ -74,8 +74,8 @@ export class CellBuilder {
     this.style.font.bold = bold;
     return this;
   }
-  setFontColor(color: ColorType) {
-    this.style.font.color = color;
+  setFontColor(color: ColorType['rgb']) {
+    this.style.font.color = { rgb: color?.replace('#', '') };
     return this;
   }
   setFontItalic(italic: CellStyleType['font']['italic'] = true) {
