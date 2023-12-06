@@ -3,7 +3,7 @@
   "version": "1.0.15",
   "description": "excel-build is a library for creating excel files in the browser",
   "main": "dist/lib/index.js",
-  "types": "dist/lib/index.d.ts",
+  "types": "dist/@types/index.d.ts",
   "scripts": {
     "build": "tsc && gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
