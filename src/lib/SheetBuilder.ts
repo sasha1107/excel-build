@@ -1,7 +1,7 @@
 import XLSX from 'xlsx-js-style';
 import { CellBuilder } from './CellBuilder';
 import type { SheetAOAOpts } from 'xlsx-js-style';
-import type { CellObjectType } from '@types';
+import type { CellObjectType } from './types';
 
 export class SheetBuilder {
   private worksheet: XLSX.WorkSheet;

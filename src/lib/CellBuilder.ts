@@ -1,4 +1,4 @@
-import type { CellObjectType, CellStyleType, ColorType } from '@types';
+import type { CellObjectType, CellStyleType, ColorType } from './types';
 
 export class CellBuilder {
   private style: CellObjectType['s'];
