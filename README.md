@@ -1,5 +1,8 @@
 # excel-build
 
+[![npm](https://img.shields.io/npm/dt/excel-build)](https://npmtrends.com/excel-build)
+[![npm](https://img.shields.io/npm/v/excel-build)](https://www.npmjs.com/package/excel-build)
+
 # Installation
 
 ```sh
