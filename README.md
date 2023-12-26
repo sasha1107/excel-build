@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/dt/excel-build)](https://npmtrends.com/excel-build)
 [![npm](https://img.shields.io/npm/v/excel-build)](https://www.npmjs.com/package/excel-build)
-<a href="https://excel-build-5hs2rm4yi-sasha1107.vercel.app/ko" target="_blank">
+<a href="https://excel-build.vercel.app/en" target="_blank">
 <img height="20px" src="https://img.shields.io/badge/📚-%20Docs-%23000000"/>
 </a>
 
