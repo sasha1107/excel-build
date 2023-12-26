@@ -3,24 +3,20 @@ import { useTranslation } from '@/app/i18n';
 import Link from 'next/link';
 
 const HashLink = async ({
-    lng,
-    id,
-    level,
-    text,
+  lng,
+  id,
+  level,
+  text,
 }: {
-    lng: string;
-    id: string;
-    level: number;
-    text: string;
+  lng: string;
+  id: string;
+  level: number;
+  text: string;
 }) => {
-    const { t } = await useTranslation(lng);
-    const className = `hover:before:content-['#'] hover:before:mr-2 hover:before:text-indigo-500 transition-all`;
-    const heading = React.createElement(
-        `h${level}`,
-        { id, className },
-        t(text)
-    );
-    return <Link href={`#${id}`}>{heading}</Link>;
+  const { t } = await useTranslation(lng);
+  const className = `hover:before:content-['#'] hover:before:mr-2 hover:before:text-primary-300 transition-all mt-4`;
+  const heading = React.createElement(`h${level}`, { id, className }, t(text));
+  return <Link href={`#${id}`}>{heading}</Link>;
 };
 
 export default HashLink;
