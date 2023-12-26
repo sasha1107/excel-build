@@ -3,8 +3,9 @@
 [![npm](https://img.shields.io/npm/dt/excel-build)](https://npmtrends.com/excel-build)
 [![npm](https://img.shields.io/npm/v/excel-build)](https://www.npmjs.com/package/excel-build)
 <a href="https://excel-build-5hs2rm4yi-sasha1107.vercel.app/ko" target="_blank">
-    <img height="20px" src="https://img.shields.io/badge/📚-%20Docs-%23000000"/>
- </a>
+<img height="20px" src="https://img.shields.io/badge/📚-%20Docs-%23000000"/>
+</a>
+
 # Installation
 
 ```sh
@@ -92,7 +93,7 @@ sheet1.appendCustomRow(
 |      `setFontItalic`       |                       Set the font to italic.                       | `function` |              `-`              | `CellBuilder` |
 |      `setFontStrike`       |                   Set strikethrough in the font.                    | `function` |              `-`              | `CellBuilder` |
 |     `setFontUnderline`     |                         Underline the font.                         | `function` |              `-`              | `CellBuilder` |
-|          `build`           |                               dsfdsf                                | `function` |              `-`              | `CellBuilder` |
+|          `build`           |                            Build a cell.                            | `function` |              `-`              | `CellBuilder` |
 
 <details>
   <summary><code>BorderStyleType</code></summary>
