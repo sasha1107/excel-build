@@ -67,6 +67,7 @@ export class SheetBuilder {
     const [x0, y0] = start;
     const [x1, y1] = end;
     this.worksheet['!merges'] = [
+      ...(this.worksheet['!merges'] || []),
       XLSX.utils.decode_range(
         `${EXCEL_COLUMN[x0]}${y0}:${EXCEL_COLUMN[x1]}${y1}`
       ),
