@@ -14,10 +14,7 @@ const Header = ({ lng }: { lng: string }) => {
   };
   const otherLang = languages.filter((l) => lng !== l)[0];
   return (
-    <header
-      className='h-[60px] px-8 flex justify-between items-center sticky top-0 z-10 backdrop-blur'
-      style={{ borderBottom: '1px solid #334155' }}
-    >
+    <header className='h-[60px] px-8 flex justify-between items-center sticky top-0 z-10 backdrop-blur border-b border-[#334155]'>
       <div className='flex gap-8'>
         <h1>excel-build</h1>
         {/* <nav className='flex gap-2'>
