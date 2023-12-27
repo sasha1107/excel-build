@@ -1,6 +1,6 @@
 {
   "name": "excel-build",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "excel-build is a library for creating excel files in the browser",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
