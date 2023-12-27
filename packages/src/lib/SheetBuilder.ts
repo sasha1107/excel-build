@@ -20,7 +20,6 @@ export class SheetBuilder {
         .setFontBold()
         .setFontSize(12)
         .setBackgroundColor('ffcbcbcb')
-        .setAlignMentWrapText()
         .build()
     );
     XLSX.utils.sheet_add_aoa(this.worksheet, [thead], option);
@@ -30,9 +29,7 @@ export class SheetBuilder {
     tRowArr: CellObjectType['v'][],
     option: SheetAOAOpts = { origin: this.worksheet['A1'] ? -1 : 'A1' }
   ) {
-    const tRow = tRowArr.map((item) =>
-      new CellBuilder(item).setAlignMentWrapText().build()
-    );
+    const tRow = tRowArr.map((item) => new CellBuilder(item).build());
     XLSX.utils.sheet_add_aoa(this.worksheet, [tRow], option);
     return this;
   }
@@ -42,7 +39,7 @@ export class SheetBuilder {
   ) {
     const tbody = tbodyArr.map((item) => {
       return item.map((value: string | number | boolean | Date | undefined) => {
-        return new CellBuilder(value).setAlignMentWrapText().build();
+        return new CellBuilder(value).build();
       });
     });
     XLSX.utils.sheet_add_aoa(this.worksheet, [...tbody], option);
