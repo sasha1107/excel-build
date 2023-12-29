@@ -29,6 +29,23 @@ const config: Config = {
           '950': '#082b0f',
         },
       },
+      keyframes: {
+        rainbow: {
+          '0%, 100%': { color: '#fecaca' },
+          '10%': { color: '#fdba74' },
+          '20%': { color: '#fde68a' },
+          '30%': { color: '#d9f99d' },
+          '40%': { color: '#a7f3d0' },
+          '50%': { color: '#99f6e4' },
+          '60%': { color: '#bae6fd' },
+          '70%': { color: '#c7d2fe' },
+          '80%': { color: '#fbcfe8' },
+          '90%': { color: '#fecdd3' },
+        },
+      },
+      animation: {
+        rainbow: 'rainbow 5s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
