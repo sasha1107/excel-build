@@ -60,14 +60,18 @@ sheet1.appendCustomRow(
         <div className=''>
           <HashLink lng={lng} id='installation' level={2} text='설치' />
           <div className='ml-2'>
-            <Code lang='bash'>npm install excel-build</Code>
+            <Code lang='bash' className='text-sm'>
+              npm install excel-build
+            </Code>
           </div>
         </div>
         <HashLink lng={lng} id='usage' level={2} text='사용' />
         <div className='ml-2'>
           <HashLink lng={lng} id='FileBuilder' level={3} text='FileBuilder' />
           <div className='ml-2'>
-            <Code lang='jsx'>{code1}</Code>
+            <Code lang='jsx' className='text-sm'>
+              {code1}
+            </Code>
           </div>
           <div>
             <HashLink lng={lng} id='FileBuilder_API' level={4} text='API' />
@@ -117,7 +121,9 @@ sheet1.appendCustomRow(
 
         <div>
           <HashLink lng={lng} id='SheetBuilder' level={3} text='SheetBuilder' />
-          <Code lang='jsx'>{codeSheetBuilder}</Code>
+          <Code lang='jsx' className='text-sm'>
+            {codeSheetBuilder}
+          </Code>
           <div>
             <HashLink lng={lng} id='SheetBuilder_API' level={4} text='API' />
             <table className='table-auto'>
@@ -254,7 +260,9 @@ sheet1.appendCustomRow(
 
         <div>
           <HashLink lng={lng} id='CellBuilder' level={3} text='CellBuilder' />
-          <Code lang='jsx'>{codeCellBuilder}</Code>
+          <Code lang='jsx' className='text-sm'>
+            {codeCellBuilder}
+          </Code>
           <div>
             <HashLink lng={lng} id='CellBuilder_API' level={4} text='API' />
             <table className='table-auto'>
