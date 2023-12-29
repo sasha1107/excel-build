@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Code } from 'bright';
 import { useTranslation } from '../i18n';
 import { HashLink, Sider } from './_components';
-
 export default async function Home({ params: { lng } }: any) {
   const text = `
    ____   ____   ____   ____   ____   ____   ____ 

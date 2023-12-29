@@ -5,7 +5,4 @@
   <polygon fill="none" points="1,5 3,5 3,2 4,2 4,5 5,5 5,1 1,1 " />
   <path fill="none" d="M6,1v5h2V5h2V1H6z M9,4H8V2h1V4z" />
   <polygon fill="none" points="11,1 11,5 13,5 13,2 14,2 14,5 15,5 15,2 16,2 16,5 17,5 17,1 " />
-  <deepl-alert xmlns="" />
-  <deepl-alert xmlns="" />
-  <deepl-alert xmlns="" />
 </svg>

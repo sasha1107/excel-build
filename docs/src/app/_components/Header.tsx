@@ -37,9 +37,9 @@ const Header = ({ lng }: { lng: string }) => {
       <div className='flex gap-4 items-center'>
         <Link
           href={`/${otherLang}`}
-          className='flex gap-1 items-center border rounded px-2 hover:text-primary-200 border-current'
+          className='flex gap-1 items-center border-[0.5px] rounded-full px-2 hover:text-primary-200 border-current font-light'
         >
-          <TranslateIcon width={20} height={20} />
+          <TranslateIcon width={18} height={18} />
           {otherLang}
         </Link>
         <Link
