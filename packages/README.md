@@ -141,3 +141,17 @@ type ColorType = {
 ```
 
 </details>
+
+## 🙏 Thanks
+
+This project is a fork of [SheetJS/sheetjs](https://github.com/sheetjs/sheetjs) combined with code from
+[sheetjs-style](https://www.npmjs.com/package/sheetjs-style) (by [ShanaMaid](https://github.com/ShanaMaid/))
+and [sheetjs-style-v2](https://www.npmjs.com/package/sheetjs-style-v2) (by [Raul Gonzalez](https://www.npmjs.com/~armandourbina)) and [xlsx-js-style](https://github.com/gitbrent/xlsx-js-style) (by [gitbrent](https://github.com/gitbrent)).
+
+All projects are under the Apache 2.0 License
+
+- [sheetjs](https://github.com/SheetJS/sheetjs)
+- [js-xlsx](https://github.com/protobi/js-xlsx)
+- [sheetjs-style](https://www.npmjs.com/package/sheetjs-style)
+- [sheetjs-style-v2](https://www.npmjs.com/package/sheetjs-style-v2)
+- [xlsx-js-style](https://www.npmjs.com/package/xlsx-js-style)
