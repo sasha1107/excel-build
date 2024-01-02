@@ -1,6 +1,6 @@
 {
   "name": "excel-build",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "excel-build is a library for creating excel files in the browser",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,7 +30,7 @@
     "type": "git",
     "url": "git://github.com/sasha1107/excel-build"
   },
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
     "xlsx-js-style": "^1.2.0"
   },
