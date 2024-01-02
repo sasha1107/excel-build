@@ -1,6 +1,6 @@
 {
   "name": "excel-build",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "excel-build is a library for creating excel files in the browser",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -35,7 +35,9 @@
     "xlsx-js-style": "^1.2.0"
   },
   "devDependencies": {
+    "@types/gulp": "^4.0.17",
     "gulp": "^4.0.2",
+    "gulp-terser": "^2.1.0",
     "gulp-uglify": "^3.0.2",
     "typescript": "^5.2.2"
   }
