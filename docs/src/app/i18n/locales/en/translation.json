@@ -30,5 +30,7 @@
   "글꼴을 이탤릭체로 설정합니다.": "Set the font to italic.",
   "글꼴에 취소선을 설정합니다.": "Set strikethrough in the font.",
   "글꼴에 밑줄을 긋습니다.": "Underline the font.",
-  "셀을 빌드합니다.": "Build a cell."
+  "셀을 빌드합니다.": "Build a cell.",
+  "문서": "Docs",
+  "예제": "Example"
 }

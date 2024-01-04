@@ -35,10 +35,10 @@ const Footer = () => {
       url: 'mailto:sasha1107@naver.com',
     },
     {
-      name: 'LICENCE',
+      name: 'LICENSE',
       icon: <CopyrightIcon className='w-4 h-4 stroke-1' />,
-      url: './docs',
-      target: '_blank',
+      url: './license',
+      target: '',
     },
     {
       name: 'STORY',
