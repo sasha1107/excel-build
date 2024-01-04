@@ -14,7 +14,7 @@ const HashLink = async ({
   text: string;
 }) => {
   const { t } = await useTranslation(lng);
-  const className = `hover:before:content-['#'] hover:before:mr-2 hover:before:text-primary-300 transition-all mt-4`;
+  const className = `hover:before:content-['#'] hover:before:mr-2 hover:before:text-primary-300 transition-all mt-4 scroll-mt-[70px]`;
   const heading = React.createElement(`h${level}`, { id, className }, t(text));
   return <Link href={`#${id}`}>{heading}</Link>;
 };
