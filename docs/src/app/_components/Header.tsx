@@ -1,47 +1,52 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import { languages } from '../i18n/settings';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import GitHubIcon from '@/assets/mark-github.svg';
 import TranslateIcon from '@/assets/translate.svg';
-
-import { headers } from 'next/headers';
+import { useTranslation } from '../i18n';
 
 const Header = ({ lng }: { lng: string }) => {
-  const pathname = headers().get('next-url');
+  const pathName = usePathname();
   const matchPath = (path: string) => {
-    // console.log(pathname);
-    return pathname?.endsWith(path) ? 'text-red-200' : '';
+    return pathName?.endsWith(path) ? 'text-primary-300' : '';
   };
   const otherLang = languages.filter((l) => lng !== l)[0];
+  const router = useRouter();
+  const currPath = pathName.split('/').slice(2).join('/');
   return (
     <header className='h-[60px] px-8 flex justify-between items-center sticky top-0 z-10 backdrop-blur border-b border-[#334155]'>
-      <div className='flex gap-8'>
-        <h1>excel-build</h1>
-        {/* <nav className='flex gap-2'>
-                    <Link
-                        href={`docs`}
-                        className={`hover:text-red-200 ${matchPath(`docs`)}`}
-                    >
-                        docs
-                    </Link>
-                    <Link
-                        href={`examples`}
-                        className={`hover:text-red-200 ${matchPath(
-                            `examples`
-                        )}`}
-                    >
-                        examples
-                    </Link>
-                </nav> */}
+      <div className='flex gap-20'>
+        <h1>
+          <button onClick={() => router.replace(`/${lng}/docs`)}>
+            excel-build
+          </button>
+        </h1>
+        {/* <nav className='flex gap-6 text-sm'>
+          <Link
+            href={`docs`}
+            className={`hover:text-primary-200 ${matchPath(`docs`)}`}
+          >
+            {lng === 'ko' ? '문서' : 'Docs'}
+          </Link>
+          <Link
+            href={`examples`}
+            className={`hover:text-primary-200 ${matchPath(`examples`)}`}
+          >
+            {lng === 'ko' ? '예제' : 'Examples'}
+          </Link>
+        </nav> */}
       </div>
       <div className='flex gap-4 items-center'>
-        <Link
-          href={`/${otherLang}`}
+        <button
+          onClick={() => router.replace(`/${otherLang}/${currPath || ''}`)}
           className='flex gap-1 items-center border-[0.5px] rounded-full px-2 hover:text-primary-200 border-current font-light'
         >
           <TranslateIcon width={18} height={18} />
           {otherLang}
-        </Link>
+        </button>
         <Link
           href='https://github.com/sasha1107/excel-build'
           className='hover:text-primary-200'
