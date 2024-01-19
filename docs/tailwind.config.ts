@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -15,18 +16,18 @@ const config: Config = {
       },
       colors: {
         primary: {
-          DEFAULT: '#7ce38b',
-          '50': '#f1fcf2',
-          '100': '#defae2',
-          '200': '#c0f2c6',
-          '300': '#7ce38b',
-          '400': '#55d368',
-          '500': '#2fb843',
-          '600': '#219833',
-          '700': '#1d782b',
-          '800': '#1c5f27',
-          '900': '#194e23',
-          '950': '#082b0f',
+          DEFAULT: '#bcf400',
+          '50': '#fcffe4',
+          '100': '#f8ffc5',
+          '200': '#eeff92',
+          '300': '#e0ff53',
+          '400': '#ccfb20',
+          '500': '#bcf400',
+          '600': '#86b500',
+          '700': '#658902',
+          '800': '#516c08',
+          '900': '#445b0c',
+          '950': '#223300',
         },
       },
       keyframes: {

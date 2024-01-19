@@ -7,6 +7,9 @@ import { usePathname, useRouter } from 'next/navigation';
 import GitHubIcon from '@/assets/mark-github.svg';
 import TranslateIcon from '@/assets/translate.svg';
 import { useTranslation } from '../i18n';
+import Logo from '@/assets/logo.svg';
+import SunIcon from '@/assets/sun.svg';
+import MoonIcon from '@/assets/moon.svg';
 
 const Header = ({ lng }: { lng: string }) => {
   const pathName = usePathname();
@@ -20,8 +23,11 @@ const Header = ({ lng }: { lng: string }) => {
     <header className='h-[60px] px-8 flex justify-between items-center sticky top-0 z-10 backdrop-blur border-b border-[#334155]'>
       <div className='flex gap-20'>
         <h1>
-          <button onClick={() => router.replace(`/${lng}/docs`)}>
-            excel-build
+          <button
+            className='flex items-center'
+            onClick={() => router.replace(`/${lng}/docs`)}
+          >
+            <Logo className />
           </button>
         </h1>
         {/* <nav className='flex gap-6 text-sm'>
@@ -40,6 +46,18 @@ const Header = ({ lng }: { lng: string }) => {
         </nav> */}
       </div>
       <div className='flex gap-4 items-center'>
+        {/* <button
+          className='dark:text-primary-200'
+          onClick={() => {
+            document.documentElement.classList.toggle('dark');
+          }}
+        >
+          {localStorage.getItem('thmee') === 'dark' ? (
+            <SunIcon width={18} height={18} />
+          ) : (
+            <MoonIcon width={18} height={18} />
+          )}
+        </button> */}
         <button
           onClick={() => router.replace(`/${otherLang}/${currPath || ''}`)}
           className='flex gap-1 items-center border-[0.5px] rounded-full px-2 hover:text-primary-200 border-current font-light'
