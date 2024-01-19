@@ -1,6 +1,6 @@
 {
   "name": "excel-build",
-  "version": "1.0.23",
+  "version": "1.0.27",
   "description": "excel-build is a library for creating excel files in the browser",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,6 +26,7 @@
     "email": "sasha1107@naver.com",
     "url": "https://github.com/sasha1107"
   },
+  "homepage": "https://excel-build.vercel.app/en/docs",
   "repository": {
     "type": "git",
     "url": "git://github.com/sasha1107/excel-build"
