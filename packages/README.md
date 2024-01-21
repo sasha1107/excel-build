@@ -44,7 +44,7 @@ const data = [
 const sheet1 = new SheetBuilder('sheet_1');
 const sheet2 = new SheetBuilder('sheet_2')
   .appendThead(['id', 'name', 'email', 'phone', 'department'])
-  .addTBody(data)
+  .appendTbody(data)
   .mergeCell([0, 3], [4, 3]);
 ```
 
@@ -54,7 +54,7 @@ const sheet2 = new SheetBuilder('sheet_2')
 | :---------------: | :--------------------------------------------------------------------------------------: | :--------: | :----------------------------------------------------------: | :------------: |
 |   `appendThead`   |                             Adds a header row to the table.                              | `function` |             `(theadArr: string[], option: any)`              | `SheetBuilder` |
 |    `appendRow`    |                                 Adds a row to the table.                                 | `function` |  `(tRowArr: string\|number\|boolean\|Date[], option: any)`   | `SheetBuilder` |
-|   `appendTbody`   |                                         sdfdsfs                                          | `function` | `(tbodyArr: string\|number\|boolean\|Date[][], option: any)` | `SheetBuilder` |
+|   `appendTbody`   |                            Adds a row in array to the table.                             | `function` | `(tbodyArr: string\|number\|boolean\|Date[][], option: any)` | `SheetBuilder` |
 | `appendCustomRow` |                           Add custom style rows to the table.                            | `function` |    `(row: string\|number\|boolean\|Date[], option: any)`     | `SheetBuilder` |
 |    `mergeCell`    | Merge the cells with the starting cell [x0, y0] and the ending cell [x1, y1] as factors. | `function` |      `(start: [number, number], end: [number, number])`      | `SheetBuilder` |
 |  `getWorkSheet`   |                              Returns the sheet you created.                              | `function` |                             `-`                              | `SheetBuilder` |
