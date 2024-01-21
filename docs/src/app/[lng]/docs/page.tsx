@@ -1,5 +1,5 @@
 import { Code } from 'bright';
-import { useTranslation } from '../../i18n';
+import { useTranslation } from '@/app/i18n';
 import { HashLink, Sider } from '../_components';
 export default async function Home({
   params: { lng },
@@ -36,7 +36,7 @@ const data = [
 const sheet1 = new SheetBuilder('sheet_1');
 const sheet2 = new SheetBuilder('sheet_2')
   .appendThead(['id', 'name', 'email', 'phone', 'department'])
-  .addTBody(data)
+  .appendTbody(data)
   .mergeCell([0, 3], [4, 3]);
   `.trim();
   const codeCellBuilder = `
@@ -54,11 +54,11 @@ sheet1.appendCustomRow(
 );
 `.trim();
   Code.lineNumbers = true;
-  Code.theme = 'github-dark';
+  // Code.theme = 'github-light';
   return (
     <div className='p-4 flex sticky top-[60px] gap-8'>
       <Sider lng={lng} />
-      <section className='flex-grow divide-y divide-slate-700 flex flex-col mt-20 gap-10'>
+      <section className='flex-grow divide-y divide-slate-700 flex flex-col mt-20 gap-10 px-10'>
         <div className=''>
           <HashLink lng={lng} id='installation' level={2} text='설치' />
           <div className='ml-2'>

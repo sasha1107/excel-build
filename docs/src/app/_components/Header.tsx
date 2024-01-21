@@ -30,29 +30,37 @@ const Header = ({ lng }: { lng: string }) => {
             <Logo className='hover:text-primary-200 ' />
           </button>
         </h1>
-        {/* <nav className='flex gap-6 text-sm'>
+        <nav className='flex gap-6 text-sm'>
           <Link
             href={`docs`}
             className={`hover:text-primary-200 ${matchPath(`docs`)}`}
           >
-            {lng === 'ko' ? '문서' : 'Docs'}
+            {lng === 'ko' ? '문서' : 'DOCS'}
           </Link>
           <Link
             href={`examples`}
             className={`hover:text-primary-200 ${matchPath(`examples`)}`}
           >
-            {lng === 'ko' ? '예제' : 'Examples'}
+            {lng === 'ko' ? '예제' : 'EXAMPLE'}
           </Link>
-        </nav> */}
+        </nav>
       </div>
       <div className='flex gap-4 items-center'>
         {/* <button
           className='dark:text-primary-200'
           onClick={() => {
+            // color preference
+
             document.documentElement.classList.toggle('dark');
+            localStorage.setItem(
+              'theme',
+              document.documentElement.classList.contains('dark')
+                ? 'dark'
+                : 'light'
+            );
           }}
         >
-          {localStorage.getItem('thmee') === 'dark' ? (
+          {localStorage.getItem('theme') === 'dark' ? (
             <SunIcon width={18} height={18} />
           ) : (
             <MoonIcon width={18} height={18} />

@@ -39,11 +39,11 @@ h4 {
 }
 
 code.inline {
-  @apply rounded p-1 px-2 bg-slate-500 text-sm dark:bg-slate-800 transition-all;
+  @apply rounded p-1 px-2 bg-slate-800 text-sm dark:bg-slate-800 transition-all;
 }
 
 table {
-  @apply border-collapse;
+  @apply border-collapse my-4;
 }
 tr {
   @apply border-b border-slate-500 hover:backdrop-brightness-200;
@@ -51,4 +51,10 @@ tr {
 td,
 th {
   @apply p-2 text-center;
+}
+thead tr {
+  @apply bg-slate-800;
+}
+thead tr th {
+  @apply font-medium;
 }
