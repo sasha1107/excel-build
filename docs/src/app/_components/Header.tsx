@@ -27,7 +27,7 @@ const Header = ({ lng }: { lng: string }) => {
             className='flex items-center'
             onClick={() => router.replace(`/${lng}/docs`)}
           >
-            <Logo className />
+            <Logo className='hover:text-primary-200 ' />
           </button>
         </h1>
         {/* <nav className='flex gap-6 text-sm'>
