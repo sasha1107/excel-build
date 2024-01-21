@@ -13,6 +13,7 @@ export async function generateStaticParams() {
 
 export const metadata: Metadata = {
   title: 'Excel-Build',
+  manifest: '/manifest.json',
   description: 'Library for easy creation and download of Excel files',
   keywords: [
     'excel',

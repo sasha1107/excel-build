@@ -1,14 +1,23 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
-    webpack: (config) => {
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ['@svgr/webpack'],
-        });
+const withPWA = require('@ducanh2912/next-pwa').default({
+  dest: 'public',
+  cacheOnFrontendNav: true,
+  aggressiveFrontEndNavCaching: true,
+  reloadOnOnline: true,
+  swcMinify: true,
+  workboxOptions: { disableDevLogs: true },
+});
 
-        return config;
-    },
+const nextConfig = {
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);

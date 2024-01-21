@@ -20,7 +20,7 @@ const Header = ({ lng }: { lng: string }) => {
   const router = useRouter();
   const currPath = pathName.split('/').slice(2).join('/');
   return (
-    <header className='h-[60px] px-8 flex justify-between items-center sticky top-0 z-10 backdrop-blur border-b border-[#334155]'>
+    <header className='h-[60px] px-8 flex justify-between items-center sticky top-0 z-10 backdrop-blur border-b border-[#334155] min-w-max'>
       <div className='flex gap-20'>
         <h1>
           <button

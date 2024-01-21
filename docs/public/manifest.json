@@ -1,0 +1,21 @@
+{
+  "name": "Excel-Build Docs",
+  "short_name": "Excel-Build",
+  "icons": [
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#0F0F0F",
+  "start_url": "/en/docs",
+  "display": "standalone",
+  "orientation": "portrait"
+}
