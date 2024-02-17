@@ -1,6 +1,8 @@
 import { Code } from 'bright';
 import { useTranslation } from '@/app/i18n';
 import { HashLink, Sider } from '../_components';
+import Link from 'next/link';
+
 export default async function Home({
   params: { lng },
 }: {
@@ -62,6 +64,17 @@ sheet1.appendCustomRow(
         <div className=''>
           <HashLink lng={lng} id='installation' level={2} text='설치' />
           <div className='ml-2'>
+            <div className='my-2 mt-4'>
+              <Link
+                href={'https://www.npmjs.com/package/excel-build'}
+                target='_blank'
+              >
+                <img
+                  src='https://img.shields.io/npm/v/excel-build'
+                  alt='npm version'
+                />
+              </Link>
+            </div>
             <Code lang='bash' className='text-sm'>
               npm install excel-build
             </Code>
@@ -253,6 +266,23 @@ sheet1.appendCustomRow(
                   <td>-</td>
                   <td>
                     <code className='inline'>string</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code className='inline'>setColumnWidth</code>
+                  </td>
+                  <td>{t('시트의 특정 열에 대한 넓이를 설정합니다.')}</td>
+                  <td>
+                    <code className='inline'>function</code>
+                  </td>
+                  <td>
+                    <code className='inline'>
+                      (columnNumber: number, width: number)
+                    </code>
+                  </td>
+                  <td>
+                    <code className='inline'>SheetBuilder</code>
                   </td>
                 </tr>
               </tbody>

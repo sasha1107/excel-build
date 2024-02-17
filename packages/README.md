@@ -59,6 +59,7 @@ const sheet2 = new SheetBuilder('sheet_2')
 |    `mergeCell`    | Merge the cells with the starting cell [x0, y0] and the ending cell [x1, y1] as factors. | `function` |      `(start: [number, number], end: [number, number])`      | `SheetBuilder` |
 |  `getWorkSheet`   |                              Returns the sheet you created.                              | `function` |                             `-`                              | `SheetBuilder` |
 |  `getSheetName`   |                        Returns the name of the sheet you created.                        | `function` |                             `-`                              |    `string`    |
+| `setColumnWidth`  |                    Set the width for a specific column on the sheet.                     | `function` |           `(columnNumber: number, width: number)`            | `SheetBuilder` |
 
 ## CellBuilder
 
