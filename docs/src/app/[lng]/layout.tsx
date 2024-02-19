@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Noto_Sans_KR } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import '../globals.css';
 import { Header, Footer, FloatButton } from '../_components';
 import { dir } from 'i18next';
@@ -49,6 +50,7 @@ export default function RootLayout({
         <main className='flex-grow mx-10'>{children}</main>
         <Footer />
         <FloatButton />
+        <Analytics />
       </body>
     </html>
   );
