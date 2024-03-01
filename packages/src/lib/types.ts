@@ -64,4 +64,9 @@ type CellStyleType = {
   numFmt?: string;
 };
 
-export type { CellObjectType, CellStyleType, ColorType };
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;
+export type { CellObjectType, CellStyleType, ColorType, DeepPartial };
